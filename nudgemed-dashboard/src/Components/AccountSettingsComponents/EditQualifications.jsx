@@ -1,16 +1,16 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserContext";
 
-function EditSignature({ editingState, currentSignature }) {
+function EditQualifications({ editingState, currentQualifications }) {
     const { users, currentUser, setUsers } = useContext(UserContext);
-    const [newSignature, setNewSignature] = useState(currentSignature);
+    const [newQualifications, setNewQualifications] = useState(currentQualifications);
 
     function edit() {
         const newUsers = users.map((user) => {
             if (user.id === currentUser) {
                 return {
                     ...user,
-                    signature: newSignature,
+                    qualifications: newQualifications,
                 }
             }
             else {
@@ -24,11 +24,11 @@ function EditSignature({ editingState, currentSignature }) {
     return (
         <form onSubmit={edit}>
             <button onClick={() => editingState("")}>Cancel</button>
-            <label htmlFor="newSignature">New Signature</label>
-            <input type="file" accept="image/*" name="newSignature" onChange={(e) => setNewSignature(URL.createObjectURL(e.target.files[0]))} />
+            <label htmlFor="newQualifications">New Qualifications</label>
+            <input type="text" name="newQualifications" value={newQualifications} onChange={(e) => setNewQualifications(e.target.value)} />
             <button type="submit">Save</button>
         </form>
     )
 }
 
-export default EditSignature;
+export default EditQualifications;

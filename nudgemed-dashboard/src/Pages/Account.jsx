@@ -4,10 +4,18 @@ import EditUsername from "../Components/AccountSettingsComponents/EditUsername";
 import EditEmail from "../Components/AccountSettingsComponents/EditEmail";
 import EditPassword from "../Components/AccountSettingsComponents/EditPassword";
 import EditSignature from "../Components/AccountSettingsComponents/EditSignature";
+import { useNavigate } from "react-router-dom";
+import EditQualifications from "../Components/AccountSettingsComponents/EditQualifications";
+import EditPracticeNumber from "../Components/AccountSettingsComponents/EditPracticeNumber";
+import EditAddress from "../Components/AccountSettingsComponents/EditAddress";
+import EditSuburb from "../Components/AccountSettingsComponents/EditSuburb";
+import EditCity from "../Components/AccountSettingsComponents/EditCity";
+import EditNumber from "../Components/AccountSettingsComponents/EditNumber";
 
 function Account() {
-    const { users, currentUser } = useContext(UserContext);
+    const { users, currentUser, logout } = useContext(UserContext);
     const [editing, setEditing] = useState("");
+    const navigate = useNavigate();
 
     return (
         <React.Fragment>
@@ -15,24 +23,60 @@ function Account() {
                 <h1>Account</h1>
                 <article>
                     <p>Username:</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0].username}</p>                    
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</p>                    
                     <button onClick={() => setEditing("username")}>Edit</button>
                 </article>
                 <article>
                     <p>Email:</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0].email}</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].email}</p>
                     <button onClick={() => setEditing("email")}>Edit</button>
                 </article>
                 <article>
                     <p>Password:</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0].password}</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].password}</p>
                     <button onClick={() => setEditing("password")}>Edit</button>
+                </article>
+                <h2>Doctor Details</h2>
+                <article>
+                    <p>Qualifications:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].qualifications}</p>
+                    <button onClick={() => setEditing("qualifications")}>Edit</button>
+                </article>
+                <article>
+                    <p>Practice Number:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].practiceNum}</p>
+                    <button onClick={() => setEditing("practiceNumber")}>Edit</button>
+                </article>
+                <article>
+                    <p>Street Address:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].address}</p>
+                    <button onClick={() => setEditing("address")}>Edit</button>
+                </article>
+                <article>
+                    <p>Suburb:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].suburb}</p>
+                    <button onClick={() => setEditing("suburb")}>Edit</button>
+                </article>
+                <article>
+                    <p>City/Town:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].city}</p>
+                    <button onClick={() => setEditing("city")}>Edit</button>
+                </article>
+                <article>
+                    <p>Telephone Number:</p>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].number}</p>
+                    <button onClick={() => setEditing("number")}>Edit</button>
                 </article>
                 <article>
                     <p>Signature:</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0].signature}</p>
+                    {users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature !== "" ? (
+                        <img src={users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature} />
+                    ) : (
+                        <React.Fragment></React.Fragment>
+                    )}
                     <button onClick={() => setEditing("signature")}>Edit</button>
                 </article>
+                <button onClick={logout}>Logout</button>
             </section>
             {editing === "username" ? (
                 <EditUsername editingState={setEditing} currentUsername={users.filter((user) => user.id === currentUser)[0].username} />
@@ -45,6 +89,24 @@ function Account() {
             ) : 
             editing === "signature" ? (
                 <EditSignature editingState={setEditing} currentSignature={users.filter((user) => user.id === currentUser)[0].signature} />
+            ) : 
+            editing === "qualifications" ? (
+                <EditQualifications editingState={setEditing} currentQualifications={users.filter((user) => user.id === currentUser)[0].qualifications} />
+            ) : 
+            editing === "practiceNumber" ? (
+                <EditPracticeNumber editingState={setEditing} currentPracticeNumber={users.filter((user) => user.id === currentUser)[0].practiceNum} />
+            ) : 
+            editing === "address" ? (
+                <EditAddress editingState={setEditing} currentAddress={users.filter((user) => user.id === currentUser)[0].address} />
+            ) : 
+            editing === "suburb" ? (
+                <EditSuburb editingState={setEditing} currentSuburb={users.filter((user) => user.id === currentUser)[0].suburb} />
+            ) : 
+            editing === "city" ? (
+                <EditCity editingState={setEditing} currentCity={users.filter((user) => user.id === currentUser)[0].city} />
+            ) : 
+            editing === "number" ? (
+                <EditNumber editingState={setEditing} currentNumber={users.filter((user) => user.id === currentUser)[0].number} />
             ) : (
                 <React.Fragment>
                 </React.Fragment>
