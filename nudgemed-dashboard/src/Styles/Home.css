@@ -1,0 +1,129 @@
+.welcomeMsg {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.logoHolderHome {
+    width: fit-content;
+    margin: 10% auto 4rem auto;
+    text-align: right;
+}
+
+.logoOneHome {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    line-height: 0.5;
+    font-size: 100px;    
+    margin: 1.5rem 0 0 0;
+}
+
+.logoTwoHome {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    line-height: 0.1;
+    font-size: 50px;
+}
+
+.linkHolderHome {
+    margin: 8rem auto auto auto;
+}
+
+.homePageContent {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+}
+
+.schedule {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 1rem;
+    border: 0.5px solid #cacaca;
+    height: 45rem;
+    overflow-y: auto;
+}
+
+.schedule article {
+    flex: 1;
+}
+
+.timeStamp {
+    border: 1px solid #d3d3d3;
+    margin: 0;
+    height: 2rem;
+    align-content: center;
+}
+
+.patient {
+    border: 1px solid #d3d3d3;
+    margin: 0;
+    height: 2rem;
+    align-content: center;
+    color: #000000;
+    transition: backgroundColor 1s;
+}
+
+.patient:hover {
+    background-color: #dbdbdb;
+}
+
+.tableHeader {
+    font-size: 20px;
+    margin: 0;
+    border: 1px solid #d3d3d3;
+    height: 3rem;
+    background-color: #dfdfdf;
+}
+
+.calendarRemind {
+    flex: 1;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 1rem;
+    border: 0.5px solid #cacaca;
+    margin-right: 3rem;
+}
+
+.react-calendar__navigation {
+    display: flex;
+}
+
+.react-calendar__navigation__label {
+    font-family: "PT Sans", sans-serif;
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.react-calendar__navigation__arrow {
+    flex-grow: 0.333;
+}
+
+.react-calendar__month-view__weekdays {
+    text-align: center;
+}
+
+.react-calendar__tile--range {
+    background-color: #999999c0;
+    color: #f2f2f2;
+    border-radius: 10rem;
+}
+
+.react-calendar__month-view__days__day--neighboringMonth {
+    opacity: 0.4;
+  }
+
+button {
+    background-color: #f2f2f2;
+    border: none;
+    padding: 15px;
+}

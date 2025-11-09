@@ -41,8 +41,8 @@ function Prescription({ state, patientID }) {
 
     return (
         <React.Fragment>
-            <form onSubmit={createPrescription}>
-                <h2>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</h2>
+            <form className="details prescriptionForm" onSubmit={createPrescription}>
+                <h3>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</h3>
                 <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].practiceNum}</p>
                 <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].address}</p>
                 <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].suburb}</p>
@@ -59,7 +59,7 @@ function Prescription({ state, patientID }) {
                 ) : (
                     <React.Fragment></React.Fragment>
                 )}
-                <button type="submit">Send</button>
+                <button className="button" type="submit">Send</button>
             </form>
         </React.Fragment>
     )

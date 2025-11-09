@@ -24,12 +24,12 @@ function LoginForm() {
     return (
         <React.Fragment>
             <form onSubmit={handleLoginInfo}>
-                <p>{message}</p>
+                <p className="warningMessage">{message}</p>
                 <label htmlFor="email">Email Address</label>
                 <input type="text" name="email" placeholder="Email..." onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor="password">Password</label>
                 <input type="password" name="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
-                <button type="submit">Log In</button>
+                <button type="submit" className="button">Log In</button>
             </form>
         </React.Fragment>
     )

@@ -32,10 +32,10 @@ function CreateAccountForm() {
                 <label htmlFor="email">Email Address</label>
                 <input type="text" name="email" placeholder="Email Address..." onChange={(e) => setEmail(e.target.value)} />
                 <label htmlFor="password">Password</label>
-                <input type="text" name="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
-                <p>Password should contain at least 8 characters, 1 number and 1 special character.</p>
-                <p>{message}</p>
-                <button type="submit">Create Account</button>
+                <input type="password" name="password" placeholder="Password..." onChange={(e) => setPassword(e.target.value)} />
+                <p className="passwordInfo">Password should contain at least 8 characters, 1 number and 1 special character.</p>
+                <p className="warningMessage">{message}</p>
+                <button type="submit" className="button">Create Account</button>
             </form>
         </React.Fragment>
     )

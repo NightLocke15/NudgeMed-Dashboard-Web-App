@@ -1,0 +1,50 @@
+.accountArea {
+    margin-top: 3%;
+    background-color: #f2f2f2;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 1rem;
+    border: 0.5px solid #cacaca;
+    height: 45rem;
+    overflow-y: auto;
+    position: relative;
+    text-align: left;
+}
+
+.otherButton {
+    color: #242424;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    background-color: #ffffff;
+    width: fit-content;
+    padding: 12px 15px;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 3px 2px 0 rgba(78, 78, 78, 0.2), 0 3px 2px 0 rgba(85, 85, 85, 0.19);
+    transition: transform 0.1s ease-in-out;
+    margin-bottom: 1rem;
+    margin-left: 95%;
+}
+
+.otherButton:hover {
+    transform: scale(1.05);
+}
+
+.accountDetail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.editForm {
+    background-color: #f2f2f2;
+    position: absolute;
+    padding: 20px;
+    border-radius: 1rem;
+    border: 0.5px solid #cacaca;
+    top: 14%;
+    right: 2%;
+    width: 17rem;
+}

@@ -1,0 +1,122 @@
+.patientsList {
+    margin-top: 3%;
+    background-color: #f2f2f2;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    border-radius: 1rem;
+    border: 0.5px solid #cacaca;
+    height: 45rem;
+    overflow-y: auto;
+    position: relative;
+}
+
+.patientsHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.headerSect {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.searchInput {
+    background-color: #f2f2f2;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    height: 2.2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    padding-left: 1rem;
+    margin: 0;
+}
+
+.icon {
+    cursor: pointer;
+}
+
+.addPatient {
+    background-color: #f2f2f2;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 2px 0 rgba(78, 78, 78, 0.2), 0 3px 2px 0 rgba(85, 85, 85, 0.19);
+    position: absolute;
+    right: 40%;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    right: 5%;
+}
+
+.patientPageItem {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.name {
+    text-align: left;
+}
+
+.details {
+    border: 1px solid #d3d3d3;
+    margin: 0;
+    align-content: center;
+    text-align: left;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-top: 1rem;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 25px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.patientEdit {
+    position: absolute;
+    right: 2rem;
+}
+
+.detailHeader {
+    display: flex;
+}
+
+textarea {
+    border: none;
+    width: 100%;
+    height: 10rem;
+    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
+}
+
+.prescription {
+    position: absolute;
+    right: 2rem;
+}
+
+.appointment {
+    position: absolute;
+    left: 2rem;
+}
+
+.otherHeading {
+    margin-top: 6%;
+}
+
+.prescriptionForm {
+    margin-top: 5rem;
+    width: 97%;
+}

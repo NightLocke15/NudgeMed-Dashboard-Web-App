@@ -122,65 +122,90 @@ function PatientDetails() {
 
     return (
         <React.Fragment>
-            <h2>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].name}</h2>
+            <div className="patientsList">
+            <h2 className="pageHeadings name">{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].name}</h2>
             <section>
-                <article>
+                <article className="details">
+                    <div className="detailHeader">
                     <h3>Patient Details</h3>
-                    <button onClick={editing ? edit : startEdit}>{editing ? "Done" : "Edit"}</button>
+                    <button className="button patientEdit" onClick={editing ? edit : startEdit}>{editing ? "Done" : "Edit"}</button>
+                    </div>
                     {editing ? (
                         <React.Fragment>
+                            <div className="detail">
                             <p>Birthday:</p>
                             <input type="text" onChange={(e) => setBirthday(e.target.value)} value={birthday} />
+                            </div>
+                            <div className="detail">
                             <p>ID:</p>
                             <input type="text" onChange={(e) => setPatientID(e.target.value)} value={patientID} />
+                            </div>
+                            <div className="detail">
                             <p>NUDGE ID:</p>
                             <input type="text" onChange={(e) => setNudgeID(e.target.value)} value={nudgeID} />
+                            </div>
+                            <div className="detail">
                             <p>Medical Aid:</p>
                             <input type="text" onChange={(e) => setMedAid(e.target.value)} value={medAid} />
+                            </div>
+                            <div className="detail">
                             <p>Medical Aid Number:</p>
                             <input type="text" onChange={(e) => setMedAidNum(e.target.value)} value={medAidNum} />
+                            </div>
+                            <div className="detail">
                             <p>Number:</p>
                             <input type="text" onChange={(e) => setNumber(e.target.value)} value={number} />
+                            </div>
+                            <div className="detail">
                             <p>Email:</p>
                             <input type="text" onChange={(e) => setEmail(e.target.value)} value={email} />
+                            </div>
                         </React.Fragment>
                     ) : (
                         <React.Fragment>
+                            <div className="detail">
                             <p>Birthday:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].birthday}</p>
+                            </div>
+                            <div className="detail">
                             <p>ID:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].id}</p>
+                            </div>
+                            <div className="detail">
                             <p>NUDGE ID:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].nudgeID}</p>
+                            </div>
+                            <div className="detail">
                             <p>Medical Aid:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].medAid}</p>
+                            </div>
+                            <div className="detail">
                             <p>Medical Aid Number:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].medAidNum}</p>
+                            </div>
+                            <div className="detail">
                             <p>Number:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].number}</p>
+                            </div>
+                            <div className="detail">
                             <p>Email:</p>
                             <p>{currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].email}</p>
+                            </div>
                         </React.Fragment>
                     )}
                     
                 </article>
-                <article>
+                <article className="details">
                     <h3>Patient Diagnosis</h3>
                     <textarea onChange={(e) => setDiagnosis(e.target.value)} value={diagnosis} aria-multiline="true" />
                 </article>
-                <article>
+                <article className="details">
                     <h3>Other Notes</h3>
                     <textarea onChange={(e) => setNotes(e.target.value)} value={notes} aria-multiline="true" />
                 </article>
                 <article>
-                    <button onClick={() => setPerscriptionState(true)}>New Prescription</button>
-                    <button onClick={() => setAppointment(true)}>New Appointment</button>
-                </article>
-                <article>
-                    <h3>Previous Prescriptions: </h3>
-                    {currentUserInfo.patients.filter((patient) => patient.nudgeID === id)[0].prescriptions.map((pres) => (
-                        <button onClick={() => setViewPresc({state: true, presc: pres})} key={pres.id}>{pres.date}</button>
-                    ))}
+                    <button onClick={() => setPerscriptionState(true)} className="button prescription">New Prescription</button>
+                    <button onClick={() => setAppointment(true)} className="button appointment">New Appointment</button>
                 </article>
             </section>
             {perscriptionState ? (
@@ -191,29 +216,8 @@ function PatientDetails() {
                 <React.Fragment>
                 </React.Fragment>
             )}
-            {viewPresc.state ? (
-                <section>
-                    <button onClick={() => setViewPresc({state: false, presc: {}})}>Close</button>
-                    <h2>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</h2>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].practiceNum}</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].address}</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].suburb}</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].city}</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].number}</p>
-                    <p>Date: {viewPresc.presc.date}</p>
-                    <p>ICD Code: {viewPresc.presc.code}</p>
-                    <p>{viewPresc.presc.content}</p>
-                    {users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature !== "" ? (
-                        <img src={users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature} />
-                    ) : (
-                        <React.Fragment></React.Fragment>
-                    )}                    
-                </section>
-            ) : (
-                <React.Fragment></React.Fragment>
-            )}
             {appointment ? (
-                <form onSubmit={(e) => applyAppointment(e)}>
+                <form className="details prescriptionForm" onSubmit={(e) => applyAppointment(e)}>
                     <p>Date:</p>
                     <DatePicker selected={appointmentDetails.date} onChange={(date) => setAppointmentDetails({...appointmentDetails, date: date.toISOString().split("T")[0]})} dateFormat='yyyy-MM-dd' />
                     <p>Time:</p>
@@ -223,11 +227,12 @@ function PatientDetails() {
                             <option key={key} value={app}>{app}</option>
                         ))}
                     </select>
-                    <button type="submit">Set Appointment</button>
+                    <button className="button" type="submit">Set Appointment</button>
                 </form>
             ) : (
                 <React.Fragment></React.Fragment>
             )}
+            </div>
         </React.Fragment>
     )
 }

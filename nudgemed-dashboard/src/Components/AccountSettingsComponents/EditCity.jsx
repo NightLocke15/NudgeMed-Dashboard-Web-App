@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserContext";
+import Octicon, { PlusIcon, SearchIcon, XIcon } from '@primer/octicons-react';
 
 function EditCity({ editingState, currentCity }) {
     const { users, currentUser, setUsers } = useContext(UserContext);
@@ -22,11 +23,11 @@ function EditCity({ editingState, currentCity }) {
     }
 
     return (
-        <form onSubmit={edit}>
-            <button onClick={() => editingState("")}>Cancel</button>
+        <form className="editForm" onSubmit={edit}>
+            <button onClick={() => editingState("")}><XIcon size={24} className="icon close" /></button>
             <label htmlFor="newCity">New City</label>
             <input type="text" name="newCity" value={newCity} onChange={(e) => setNewCity(e.target.value)} />
-            <button type="submit">Save</button>
+            <button className="button" type="submit">Save</button>
         </form>
     )
 }

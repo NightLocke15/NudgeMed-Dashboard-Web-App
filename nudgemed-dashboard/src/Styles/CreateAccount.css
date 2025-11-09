@@ -1,0 +1,11 @@
+.logoHolderCreateAccount {
+    width: fit-content;
+    margin: 5% auto 4rem auto;
+    text-align: right;
+}
+
+.passwordInfo {
+    text-align: left;
+    font-size: 14px;
+    line-height: 1;
+}

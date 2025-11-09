@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserContext";
+import Octicon, { PlusIcon, SearchIcon, XIcon } from '@primer/octicons-react';
 
 function EditEmail({ editingState, currentEmail }) {
     const { users, currentUser, setUsers } = useContext(UserContext);
@@ -34,14 +35,14 @@ function EditEmail({ editingState, currentEmail }) {
     }
 
     return (
-        <form onSubmit={edit}>
-            <button onClick={() => editingState("")}>Cancel</button>
+        <form className="editForm" onSubmit={edit}>
+            <button onClick={() => editingState("")}><XIcon size={24} className="icon close" /></button>
             <p>{message}</p>
             <label htmlFor="oldEmail">Old Email</label>
             <input type="text" name="oldEmail" onChange={(e) => setOldEmail(e.target.value)} />
             <label htmlFor="newEmail">New Email</label>
             <input type="text" name="newEmail" onChange={(e) => setNewEmail(e.target.value)} />
-            <button type="submit">Save</button>
+            <button className="button" type="submit">Save</button>
         </form>
     )
 }

@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { UserContext } from "../Contexts/UserContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import '../Styles/Navigation.css'
 
 function Navigation() {
     const { authenticated } = useContext(UserContext);
@@ -8,33 +9,35 @@ function Navigation() {
         {
             name: "Home",
             href: "/",
-            class: "notCurrent",
         },
         {
             name: "Patients",
             href: "/patients",
-            class: "notCurrent",
         },
         {
             name: "Account",
             href: "/account",
-            class: "notCurrent",
         },
     ]
 
+    const location = useLocation();
+
     return (
-        <React.Fragment>
-            <h1>NUDGEmed</h1>
+        <header>
+            <Link className="logoHolder" to="/">
+                <p className="logoOne">NUDGE</p>
+                <p className="logoTwo">med</p>
+            </Link>            
             {authenticated ? (
-                <section>
+                <section className="linksHolderNav">
                     {pages.map((page, key) => (
-                        <Link key={key} className={page.class} to={page.href}>{page.name}</Link>
+                        <Link key={key} to={page.href} className="link"><p className={location.pathname === page.href ? "navButton" : "notCurrent"}>{page.name}</p></Link>
                     ))}
                 </section>
             ) : (
                 <React.Fragment></React.Fragment>
             )}
-        </React.Fragment>
+        </header>
     )
 }
 

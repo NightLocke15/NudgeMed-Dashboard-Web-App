@@ -11,6 +11,7 @@ import EditAddress from "../Components/AccountSettingsComponents/EditAddress";
 import EditSuburb from "../Components/AccountSettingsComponents/EditSuburb";
 import EditCity from "../Components/AccountSettingsComponents/EditCity";
 import EditNumber from "../Components/AccountSettingsComponents/EditNumber";
+import '../Styles/Account.css'
 
 function Account() {
     const { users, currentUser, logout } = useContext(UserContext);
@@ -19,64 +20,84 @@ function Account() {
 
     return (
         <React.Fragment>
-            <section>
-                <h1>Account</h1>
+            <section className="accountArea">
+                <h1 className="pageHeadings">Account</h1>
                 <article>
+                    <div className="accountDetail">
                     <p>Username:</p>
-                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</p>                    
-                    <button onClick={() => setEditing("username")}>Edit</button>
+                    <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].username}</p>        
+                    </div>            
+                    <button className="otherButton" onClick={() => setEditing("username")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Email:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].email}</p>
-                    <button onClick={() => setEditing("email")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("email")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Password:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].password}</p>
-                    <button onClick={() => setEditing("password")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("password")}>Edit</button>
                 </article>
-                <h2>Doctor Details</h2>
+                <h3>Doctor Details</h3>
                 <article>
+                    <div className="accountDetail">
                     <p>Qualifications:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].qualifications}</p>
-                    <button onClick={() => setEditing("qualifications")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("qualifications")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Practice Number:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].practiceNum}</p>
-                    <button onClick={() => setEditing("practiceNumber")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("practiceNumber")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Street Address:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].address}</p>
-                    <button onClick={() => setEditing("address")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("address")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Suburb:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].suburb}</p>
-                    <button onClick={() => setEditing("suburb")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("suburb")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>City/Town:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].city}</p>
-                    <button onClick={() => setEditing("city")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("city")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Telephone Number:</p>
                     <p>{users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].number}</p>
-                    <button onClick={() => setEditing("number")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("number")}>Edit</button>
                 </article>
                 <article>
+                    <div className="accountDetail">
                     <p>Signature:</p>
                     {users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature !== "" ? (
                         <img src={users.filter((user) => user.id === currentUser)[0] && users.filter((user) => user.id === currentUser)[0].signature} />
                     ) : (
                         <React.Fragment></React.Fragment>
                     )}
-                    <button onClick={() => setEditing("signature")}>Edit</button>
+                    </div>
+                    <button className="otherButton" onClick={() => setEditing("signature")}>Edit</button>
                 </article>
-                <button onClick={logout}>Logout</button>
+                <button className="button" onClick={logout}>Logout</button>
             </section>
             {editing === "username" ? (
                 <EditUsername editingState={setEditing} currentUsername={users.filter((user) => user.id === currentUser)[0].username} />

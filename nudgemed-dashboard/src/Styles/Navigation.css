@@ -1,0 +1,66 @@
+header {
+    background-color: #E3E3E3;
+    box-shadow: 0 4px 3px 0 rgba(78, 78, 78, 0.2), 0 6px 5px 0 rgba(85, 85, 85, 0.19);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logoHolder {
+    text-align: right;
+    text-decoration: none;
+    color: #242424;
+    margin-top: 0;
+    margin: 0 0 0 1rem
+}
+
+.logoOne {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    line-height: 0.1;
+    font-size: 30px;    
+    margin: 1.5rem 0 0 0;
+}
+
+.logoTwo {
+    font-family: "PT Sans", sans-serif;
+    font-weight: 400;
+    line-height: 0.1;
+    font-size: 20px;
+}
+
+.linksHolderNav {
+    display: flex;
+    flex-direction: row;
+    margin: auto 0;
+}
+
+.navButton {
+    color: #242424;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    background-color: #f2f2f2;
+    width: fit-content;
+    padding: 10px 13px;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 3px 2px 0 rgba(78, 78, 78, 0.2), 0 3px 2px 0 rgba(85, 85, 85, 0.19);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.notCurrent {
+    color: #242424;
+    font-family: "Roboto", sans-serif;
+    font-size: 15px;
+    padding: 10px 13px;
+    border-radius: 2rem;
+    transition: background-color 1s, box-shadow 1s;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.notCurrent:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0 3px 2px 0 rgba(78, 78, 78, 0.2), 0 3px 2px 0 rgba(85, 85, 85, 0.19);
+}

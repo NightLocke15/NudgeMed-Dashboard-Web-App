@@ -9,6 +9,7 @@ import Patients from './Pages/Patients';
 import Account from './Pages/Account';
 import Navigation from './Components/Navigation';
 import PatientDetails from './Components/Patients/PatientDetails';
+import './/Styles/Overall.css'
 
 function App() {
   return (

@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserContext";
+import Octicon, { PlusIcon, SearchIcon, XIcon } from '@primer/octicons-react';
+import '../../Styles/CreateAccount.css'
 
 function EditPassword({ editingState, currentPassword }) {
     const { users, currentUser, setUsers } = useContext(UserContext);
@@ -34,14 +36,14 @@ function EditPassword({ editingState, currentPassword }) {
     }
 
     return (
-        <form onSubmit={edit}>
-            <button onClick={() => editingState("")}>Cancel</button>
+        <form className="editForm" onSubmit={edit}>
+            <button onClick={() => editingState("")}><XIcon size={24} className="icon close" /></button>
             <p>{message}</p>
             <label htmlFor="oldPassword">Old Password</label>
             <input type="text" name="oldPassword" onChange={(e) => setOldPassword(e.target.value)} />
             <label htmlFor="newPassword">New Password</label>
             <input type="text" name="newPassword" onChange={(e) => setNewPassword(e.target.value)} />
-            <button type="submit">Save</button>
+            <button className="button" type="submit">Save</button>
         </form>
     )
 }

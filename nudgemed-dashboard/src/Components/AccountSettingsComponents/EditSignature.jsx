@@ -1,5 +1,7 @@
 import React, { useContext, useState } from "react";
 import { UserContext } from "../../Contexts/UserContext";
+import Octicon, { PlusIcon, SearchIcon, XIcon } from '@primer/octicons-react';
+import '../../Styles/CreateAccount.css'
 
 function EditSignature({ editingState, currentSignature }) {
     const { users, currentUser, setUsers } = useContext(UserContext);
@@ -22,11 +24,11 @@ function EditSignature({ editingState, currentSignature }) {
     }
 
     return (
-        <form onSubmit={edit}>
-            <button onClick={() => editingState("")}>Cancel</button>
+        <form className="editForm" onSubmit={edit}>
+            <button onClick={() => editingState("")}><XIcon size={24} className="icon close" /></button>
             <label htmlFor="newSignature">New Signature</label>
             <input type="file" accept="image/*" name="newSignature" onChange={(e) => setNewSignature(URL.createObjectURL(e.target.files[0]))} />
-            <button type="submit">Save</button>
+            <button className="button" type="submit">Save</button>
         </form>
     )
 }

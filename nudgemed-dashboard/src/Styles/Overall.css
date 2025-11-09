@@ -1,0 +1,59 @@
+body {
+    background-color: #E3E3E3;
+    font-family: "Roboto", sans-serif;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.button {
+    color: #242424;
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    background-color: #ffffff;
+    width: fit-content;
+    margin: 1rem auto auto auto;
+    padding: 12px 15px;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 3px 2px 0 rgba(78, 78, 78, 0.2), 0 3px 2px 0 rgba(85, 85, 85, 0.19);
+    transition: transform 0.1s ease-in-out;
+}
+
+.button:hover {
+    transform: scale(1.05);
+}
+
+.pureLinks {
+    color: #1664ad;
+    line-height: 0.1;
+}
+
+input {
+    background-color: #f2f2f2;
+    border: 1px solid #242424;
+    border-radius: 10px;
+    height: 2.2rem;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    padding-left: 1rem;
+    margin: 0 0 1rem;
+}
+
+label {
+    text-align: left;
+    margin: 1rem 0 0.5rem;
+}
+
+.warningMessage {
+    color: #ee1414;
+    font-size: 16px;
+}
+
+.pageHeadings {
+    font-weight: 400;
+    font-size: 30px;
+    margin: 0;
+}
+
