@@ -38,14 +38,11 @@ function Patients() {
                         </button>
                     </article>
                     <article className="headerSect">
-                        <input className="searchInput" type="text" placeholder="Search..."/>
-                        <button>
-                            <SearchIcon className="icon" size={24} />
-                        </button>
+                        <input className="searchInput" type="text" placeholder="Search..." onChange={(e) => setSearch(e.target.value)} />
                     </article>
                 </section>            
                 <section>
-                    {users.filter((user) => user.id === currentUser)[0].patients && users.filter((user) => user.id === currentUser)[0].patients.map((patient) => (
+                    {users.filter((user) => user.id === currentUser)[0].patients && users.filter((user) => user.id === currentUser)[0].patients.filter((pat) => pat.name.toLowerCase().includes(search)).map((patient) => (
                         <Link to={`/patients/${patient.nudgeID}`} className="link" key={patient.nudgeID}><p className="patientPageItem patient">{patient.name}</p></Link>
                     ))}
                 </section>
