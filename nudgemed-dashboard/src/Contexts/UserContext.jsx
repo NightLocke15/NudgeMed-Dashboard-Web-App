@@ -52,10 +52,10 @@ function UserProvider ({ children }) {
 
     function createAccount(username, email, password) {
         if (!users.some((user) => user.email === email) && password.length >= 8 && /\d/.test(password) && /[!@#$%^&*()\-+={}[\]:;"'<>,.?\/|\\]/.test(password)) {
-            let array = [];
+            let arr = [];
             for (let i = 0; i < 10; i++) {
                 for (let j = 0; j < 4; j++) {
-                    array = [...array, `${String(8 + i).padStart(2, '0')}:${String(15 * j).padStart(2, '0')}`];
+                    arr = [...arr, `${String(8 + i).padStart(2, '0')}:${String(15 * j).padStart(2, '0')}`];
                 }            
             }
 
