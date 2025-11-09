@@ -15,6 +15,7 @@
     "react-router-dom": "^7.9.4",
     "web-vitals": "^2.1.4"
   },
+  "type": "module",
   "scripts": {
     "start": "rsbuild dev",
     "build": "rsbuild build",
